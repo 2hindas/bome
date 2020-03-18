@@ -1,0 +1,1489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXCheckBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXSlider?>
+<?import com.jfoenix.controls.JFXTabPane?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import com.jfoenix.controls.JFXToggleNode?>
+<?import de.jensd.fx.glyphs.fontawesome.FontAwesomeIconView?>
+<?import de.jensd.fx.glyphs.weathericons.WeatherIconView?>
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.oopp.client.InterfaceController">
+   <children>
+      <AnchorPane fx:id="paneLogin" prefHeight="820.0" prefWidth="1300.0" style="-fx-background-color: #282828;" styleClass="wallpaper-dark" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <JFXButton fx:id="googleLoginButton" layoutX="565.0" layoutY="400.0" onAction="#handleButtonAction" prefHeight="45.0" prefWidth="150.0" styleClass="button-blue" text="log in with Google" textFill="WHITE" />
+            <Label fx:id="labelLogo" alignment="CENTER" contentDisplay="CENTER" layoutX="573.0" layoutY="200.0" styleClass="comfortaa-regular" text="bome" textFill="WHITE">
+               <font>
+                  <Font size="45.0" />
+               </font>
+            </Label>
+            <WebView fx:id="googleLoginPage" layoutY="200.0" prefHeight="820.0" prefWidth="1300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+         </children>
+      </AnchorPane>
+      <BorderPane fx:id="borderPane" prefHeight="800.0" prefWidth="1280.0">
+         <left>
+              <AnchorPane fx:id="paneSidebar" prefHeight="800.0" prefWidth="280.0" style="-fx-background-color: #f2f2f2; -fx-border-radius: 100;" BorderPane.alignment="CENTER">
+                  <children>
+                      <VBox fx:id="boxUser" alignment="CENTER" layoutY="30.0" prefHeight="280.0" prefWidth="280.0" spacing="5.0" AnchorPane.topAnchor="30.0">
+                          <children>
+                              <Circle fx:id="userImage" fill="WHITE" radius="100.0" stroke="#acce6c" strokeType="INSIDE" strokeWidth="5.0" />
+                              <Label fx:id="userName" alignment="CENTER" prefHeight="30.0" prefWidth="200.0" styleClass="user" text="username" textFill="#282828" />
+                          </children>
+                      </VBox>
+                  <VBox fx:id="boxMenu" layoutY="324.0" prefHeight="240.0" prefWidth="280.0" AnchorPane.topAnchor="324.0">
+                     <children>
+                        <JFXButton fx:id="buttonDashboard" focusTraversable="false" onAction="#handleButtonAction" prefHeight="60.0" prefWidth="280.0" ripplerFill="WHITE" style="-fx-background-radius: 0;" styleClass="button-menu">
+                           <graphic>
+                                    <HBox alignment="CENTER" prefHeight="80.0" prefWidth="250.0">
+                                 <children>
+                                    <FontAwesomeIconView fill="#777777" glyphName="DASHBOARD" size="30" />
+                                    <Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0" text="dashboard" textFill="#777777">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                                    </HBox>
+                           </graphic>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="buttonAchievements" focusTraversable="false" layoutX="10.0" layoutY="10.0" onAction="#handleButtonAction" prefHeight="60.0" prefWidth="280.0" ripplerFill="WHITE" style="-fx-background-radius: 0;" styleClass="button-menu">
+                           <graphic>
+                              <HBox alignment="CENTER" prefHeight="80.0" prefWidth="250.0">
+                                 <children>
+                                    <FontAwesomeIconView fill="#777777" glyphName="TROPHY" size="30" />
+                                    <Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0" text="achievements" textFill="#777777">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </graphic>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="buttonStatistics" focusTraversable="false" layoutX="10.0" layoutY="90.0" onAction="#handleButtonAction" prefHeight="60.0" prefWidth="280.0" ripplerFill="WHITE" style="-fx-background-radius: 0;" styleClass="button-menu" text="Button">
+                           <graphic>
+                              <HBox alignment="CENTER" prefHeight="80.0" prefWidth="250.0">
+                                 <children>
+                                    <FontAwesomeIconView fill="#777777" glyphName="SIGNAL" size="30" />
+                                    <Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0" text="statistics" textFill="#777777">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </graphic>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </JFXButton>
+                        <JFXButton fx:id="buttonData" focusTraversable="false" layoutX="10.0" layoutY="130.0" onAction="#handleButtonAction" prefHeight="60.0" prefWidth="280.0" ripplerFill="WHITE" style="-fx-background-radius: 0;" styleClass="button-menu" text="Button">
+                           <graphic>
+                              <HBox alignment="CENTER" prefHeight="80.0" prefWidth="250.0">
+                                 <children>
+                                    <FontAwesomeIconView fill="#777777" glyphName="FILE" size="30" />
+                                    <Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0" text="methods" textFill="#777777">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                           </graphic>
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </JFXButton>
+                     </children>
+                  </VBox>
+                  <Label fx:id="labelBome" layoutX="114.0" layoutY="756.0" style="-fx-font-family: &quot;Comfortaa Regular&quot;;" text="bome ©" textFill="#a8a8a8" AnchorPane.bottomAnchor="45.0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <HBox layoutX="15.0" layoutY="615.0" prefHeight="130.0" prefWidth="251.0" spacing="10.0">
+                     <children>
+                        <VBox alignment="TOP_CENTER" prefHeight="130.0" prefWidth="80.0" spacing="10.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="30.0" prefWidth="75.0" text="carbon saved" textFill="#777777">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/co2_saved.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="carbonSaved" alignment="CENTER" prefHeight="30.0" prefWidth="75.0" styleClass="montserrat-black" text="0 kg" textFill="#777777">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" prefHeight="130.0" prefWidth="80.0" spacing="10.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="30.0" prefWidth="75.0" text="water saved" textFill="#777777">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/water_saved.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="waterSaved" alignment="CENTER" prefHeight="30.0" prefWidth="75.0" styleClass="montserrat-black" text="0 L" textFill="#777777">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                        <VBox alignment="TOP_CENTER" prefHeight="130.0" prefWidth="80.0" spacing="10.0">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="30.0" prefWidth="75.0" text="land saved" textFill="#777777">
+                                 <font>
+                                    <Font size="10.0" />
+                                 </font>
+                              </Label>
+                              <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/land_saved.png" />
+                                 </image>
+                              </ImageView>
+                              <Label fx:id="landSaved" alignment="CENTER" prefHeight="30.0" prefWidth="75.0" styleClass="montserrat-black" text="0 m2" textFill="#777777">
+                                 <font>
+                                    <Font size="12.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </VBox>
+                     </children>
+                  </HBox>
+                  <JFXButton fx:id="buttonCredits" layoutX="97.0" layoutY="790.0" onAction="#handleButtonAction" style="-fx-font-size: 8;" styleClass="button-grey" text="acknowledgements" />
+                  </children>
+            </AnchorPane>
+         </left>
+         <center>
+              <AnchorPane fx:id="paneViews" prefHeight="800.0" prefWidth="1000.0" BorderPane.alignment="CENTER">
+                  <children>
+                  <AnchorPane fx:id="paneCredits" layoutX="20.0" layoutY="20.0" prefHeight="830.0" prefWidth="1030.0" style="-fx-background-color: white;" styleClass="wallpaper-light" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <VBox layoutX="95.0" layoutY="55.0" prefHeight="710.0" prefWidth="830.0" spacing="50.0">
+                           <children>
+                              <HBox prefHeight="140.0" prefWidth="830.0" spacing="20.0">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" prefHeight="140.0" prefWidth="150.0">
+                                       <children>
+                                          <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/local.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="designed by" textFill="#777777" />
+                                          <Label alignment="CENTER" prefHeight="25.0" prefWidth="149.0" text="Smashicons" textFill="#282828">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="from Flaticon" textFill="#777777" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="140.0" prefWidth="150.0">
+                                       <children>
+                                          <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/electricity.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="designed by" textFill="#777777" />
+                                          <Label alignment="CENTER" prefHeight="25.0" prefWidth="149.0" text="Freepik" textFill="#282828">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="from Flaticon" textFill="#777777" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" layoutX="160.0" layoutY="10.0" prefHeight="140.0" prefWidth="150.0">
+                                       <children>
+                                          <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/natural_gas.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="designed by" textFill="#777777" />
+                                          <Label alignment="CENTER" prefHeight="25.0" prefWidth="149.0" text="Smashicons" textFill="#282828">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="from Flaticon" textFill="#777777" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" layoutX="310.0" layoutY="10.0" prefHeight="140.0" prefWidth="150.0">
+                                       <children>
+                                          <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/tree3.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="designed by" textFill="#777777" />
+                                          <Label alignment="CENTER" prefHeight="25.0" prefWidth="149.0" text="Freepik" textFill="#282828">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="from Flaticon" textFill="#777777" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" layoutX="520.0" layoutY="10.0" prefHeight="140.0" prefWidth="150.0">
+                                       <children>
+                                          <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/panel.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="designed by" textFill="#777777" />
+                                          <Label alignment="CENTER" prefHeight="25.0" prefWidth="149.0" text="Freepik" textFill="#282828">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="from Flaticon" textFill="#777777" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="140.0" prefWidth="830.0" spacing="20.0">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" prefHeight="140.0" prefWidth="150.0">
+                                       <children>
+                                          <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/trees.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="designed by" textFill="#777777" />
+                                          <Label alignment="CENTER" prefHeight="25.0" prefWidth="149.0" text="prettycons" textFill="#282828">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="from Flaticon" textFill="#777777" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="140.0" prefWidth="150.0">
+                                       <children>
+                                          <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/hybrid.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="designed by" textFill="#777777" />
+                                          <Label alignment="CENTER" prefHeight="25.0" prefWidth="149.0" text="Freepik" textFill="#282828">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="from Flaticon" textFill="#777777" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" layoutX="160.0" layoutY="10.0" prefHeight="140.0" prefWidth="150.0">
+                                       <children>
+                                          <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/bike.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="designed by" textFill="#777777" />
+                                          <Label alignment="CENTER" prefHeight="25.0" prefWidth="149.0" text="Freepik" textFill="#282828">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="from Flaticon" textFill="#777777" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" layoutX="310.0" layoutY="10.0" prefHeight="140.0" prefWidth="150.0">
+                                       <children>
+                                          <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/plane.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="designed by" textFill="#777777" />
+                                          <Label alignment="CENTER" prefHeight="25.0" prefWidth="149.0" text="Pixel Buddha" textFill="#282828">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="from Flaticon" textFill="#777777" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" layoutX="520.0" layoutY="10.0" prefHeight="140.0" prefWidth="150.0">
+                                       <children>
+                                          <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/train.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="designed by" textFill="#777777" />
+                                          <Label alignment="CENTER" prefHeight="25.0" prefWidth="149.0" text="Freepik" textFill="#282828">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="from Flaticon" textFill="#777777" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="140.0" prefWidth="830.0" spacing="20.0">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" prefHeight="140.0" prefWidth="150.0">
+                                       <children>
+                                          <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/bus.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="designed by" textFill="#777777" />
+                                          <Label alignment="CENTER" prefHeight="25.0" prefWidth="149.0" text="Freepik" textFill="#282828">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="from Flaticon" textFill="#777777" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="140.0" prefWidth="150.0">
+                                       <children>
+                                          <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/gas.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="designed by" textFill="#777777" />
+                                          <Label alignment="CENTER" prefHeight="25.0" prefWidth="149.0" text="Freepik" textFill="#282828">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="from Flaticon" textFill="#777777" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" layoutX="160.0" layoutY="10.0" prefHeight="140.0" prefWidth="150.0">
+                                       <children>
+                                          <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/water_saved.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="designed by" textFill="#777777" />
+                                          <Label alignment="CENTER" prefHeight="25.0" prefWidth="149.0" text="Icon Pond" textFill="#282828">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="from Flaticon" textFill="#777777" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" layoutX="310.0" layoutY="10.0" prefHeight="140.0" prefWidth="150.0">
+                                       <children>
+                                          <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/land_saved.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="designed by" textFill="#777777" />
+                                          <Label alignment="CENTER" prefHeight="25.0" prefWidth="149.0" text="Icon Pond" textFill="#282828">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="from Flaticon" textFill="#777777" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" layoutX="520.0" layoutY="10.0" prefHeight="140.0" prefWidth="150.0">
+                                       <children>
+                                          <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/co2_saved.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="designed by" textFill="#777777" />
+                                          <Label alignment="CENTER" prefHeight="25.0" prefWidth="149.0" text="Icon Pond" textFill="#282828">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="from Flaticon" textFill="#777777" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                              <HBox prefHeight="140.0" prefWidth="830.0" spacing="20.0">
+                                 <children>
+                                    <VBox alignment="TOP_CENTER" prefHeight="140.0" prefWidth="150.0">
+                                       <children>
+                                          <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/vegan.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="designed by" textFill="#777777" />
+                                          <Label alignment="CENTER" prefHeight="25.0" prefWidth="149.0" text="Freepik" textFill="#282828">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="from Flaticon" textFill="#777777" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" layoutX="10.0" layoutY="10.0" prefHeight="140.0" prefWidth="150.0">
+                                       <children>
+                                          <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/vegetarian.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="designed by" textFill="#777777" />
+                                          <Label alignment="CENTER" prefHeight="25.0" prefWidth="149.0" text="Freepik" textFill="#282828">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="from Flaticon" textFill="#777777" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" layoutX="160.0" layoutY="10.0" prefHeight="140.0" prefWidth="150.0">
+                                       <children>
+                                          <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/pescetarian.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="designed by" textFill="#777777" />
+                                          <Label alignment="CENTER" prefHeight="25.0" prefWidth="149.0" text="Freepik" textFill="#282828">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="from Flaticon" textFill="#777777" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" layoutX="310.0" layoutY="10.0" prefHeight="140.0" prefWidth="150.0">
+                                       <children>
+                                          <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/carnivorous.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="designed by" textFill="#777777" />
+                                          <Label alignment="CENTER" prefHeight="25.0" prefWidth="149.0" text="Freepik" textFill="#282828">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="from Flaticon" textFill="#777777" />
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="TOP_CENTER" layoutX="520.0" layoutY="10.0" prefHeight="140.0" prefWidth="150.0">
+                                       <children>
+                                          <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@images/electric.png" />
+                                             </image>
+                                          </ImageView>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="designed by" textFill="#777777" />
+                                          <Label alignment="CENTER" prefHeight="25.0" prefWidth="149.0" text="Tesla" textFill="#282828">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label alignment="CENTER" prefHeight="20.0" prefWidth="150.0" text="Tesla, Inc." textFill="#777777" />
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+                      <AnchorPane fx:id="paneAchievements" layoutX="10.0" layoutY="10.0" prefHeight="810.0" prefWidth="1010.0" style="-fx-background-color: white;" styleClass="wallpaper-light" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <HBox layoutX="213.0" layoutY="30.0" prefHeight="155.0" prefWidth="575.0" spacing="100.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="155.0" prefWidth="125.0" spacing="10.0">
+                                 <children>
+                                    <ImageView fx:id="b1" fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/tree1.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label alignment="CENTER" prefHeight="20.0" prefWidth="155.0" text="plant 1 tree" textFill="#282828">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER" prefHeight="155.0" prefWidth="155.0" spacing="10.0">
+                                 <children>
+                                    <ImageView fx:id="b2" fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/tree2.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label alignment="CENTER" prefHeight="20.0" prefWidth="155.0" text="plant 10 trees" textFill="#282828">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER" prefHeight="155.0" prefWidth="155.0" spacing="10.0">
+                                 <children>
+                                    <ImageView fx:id="b3" fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/tree3.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label alignment="CENTER" prefHeight="20.0" prefWidth="155.0" text="plant 100 trees" textFill="#282828">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="213.0" layoutY="230.0" prefHeight="155.0" prefWidth="575.0" spacing="100.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="155.0" prefWidth="125.0" spacing="10.0">
+                                 <children>
+                                    <ImageView fx:id="b4" fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/solar1.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label alignment="CENTER" prefHeight="20.0" prefWidth="155.0" text="install 1 m2 " textFill="#282828">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER" prefHeight="155.0" prefWidth="155.0" spacing="10.0">
+                                 <children>
+                                    <ImageView fx:id="b5" fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/solar2.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label alignment="CENTER" prefHeight="20.0" prefWidth="155.0" text="install 25 m2" textFill="#282828">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER" prefHeight="155.0" prefWidth="155.0" spacing="10.0">
+                                 <children>
+                                    <ImageView fx:id="b6" fitHeight="125.0" fitWidth="125.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/solar3.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label alignment="CENTER" prefHeight="20.0" prefWidth="155.0" text="install 50 m2" textFill="#282828">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                     </children></AnchorPane>
+                      <AnchorPane fx:id="paneStatistics" layoutX="10.0" layoutY="10.0" prefHeight="820.0" prefWidth="1020.0" style="-fx-background-color: white;" styleClass="wallpaper-light" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <children>
+                        <PieChart fx:id="pieTest" labelsVisible="false" layoutX="679.0" layoutY="120.0" prefHeight="250.0" prefWidth="250.0" title="carbon emission savings" />
+                        <HBox layoutX="45.0" layoutY="145.0" prefHeight="200.0" prefWidth="550.0" spacing="50.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="150.0" spacing="10.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="30.0" prefWidth="120.0" text="carbon saved" textFill="#282828">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/co2_saved.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="statsCarbon" alignment="CENTER" prefHeight="50.0" prefWidth="120.0" styleClass="montserrat-black" text="0 kg" textFill="#282828">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="150.0" spacing="10.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="30.0" prefWidth="120.0" text="water saved" textFill="#282828">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/water_saved.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="statsWater" alignment="CENTER" prefHeight="50.0" prefWidth="120.0" styleClass="montserrat-black" text="0 L" textFill="#282828">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="150.0" spacing="10.0">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="30.0" prefWidth="120.0" text="land saved" textFill="#282828">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/land_saved.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="statsLand" alignment="CENTER" prefHeight="50.0" prefWidth="120.0" styleClass="montserrat-black" text="0 m2" textFill="#282828">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                        <HBox layoutX="45.0" layoutY="460.0" prefHeight="155.0" prefWidth="910.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" prefHeight="125.0" prefWidth="130.0" spacing="10.0" style="-fx-background-color: #f2f2f2 #f2f2f2; -fx-background-radius: 10 0 0 10;">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="50.0" prefWidth="150.0" text="bicycle" textFill="#282828">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/bike.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="statsBicycle" alignment="CENTER" prefHeight="38.0" prefWidth="150.0" styleClass="montserrat-black" text="0 km" textFill="#282828">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font></Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER" prefHeight="125.0" prefWidth="130.0" spacing="10.0" style="-fx-background-color: f7f7f8;">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="50.0" prefWidth="150.0" text="public transport" textFill="#282828">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/bus.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="statsTransport" alignment="CENTER" prefHeight="38.0" prefWidth="150.0" styleClass="montserrat-black" text="0 km" textFill="#282828">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font></Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER" layoutX="160.0" layoutY="10.0" prefHeight="125.0" prefWidth="130.0" spacing="10.0" style="-fx-background-color: #f2f2f2;">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="50.0" prefWidth="150.0" text="vegan" textFill="#282828">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/vegan.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="statsVegan" alignment="CENTER" prefHeight="38.0" prefWidth="150.0" styleClass="montserrat-black" text="0" textFill="#282828">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font></Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER" layoutX="310.0" layoutY="10.0" prefHeight="125.0" prefWidth="130.0" spacing="10.0" style="-fx-background-color: f7f7f8;">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="50.0" prefWidth="150.0" text="vegetarian" textFill="#282828">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/vegetarian.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="statsVegetarian" alignment="CENTER" prefHeight="38.0" prefWidth="150.0" styleClass="montserrat-black" text="0" textFill="#282828">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font></Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER" layoutX="460.0" layoutY="10.0" prefHeight="125.0" prefWidth="130.0" spacing="10.0" style="-fx-background-color: #f2f2f2;">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="50.0" prefWidth="150.0" text="local" textFill="#282828">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/local.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="statsLocal" alignment="CENTER" prefHeight="38.0" prefWidth="150.0" styleClass="montserrat-black" text="0" textFill="#282828">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font></Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER" layoutX="610.0" layoutY="10.0" prefHeight="125.0" prefWidth="130.0" spacing="10.0" style="-fx-background-color: f7f7f8;">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="50.0" prefWidth="150.0" text="trees" textFill="#282828">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/trees.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="statsTrees" alignment="CENTER" prefHeight="38.0" prefWidth="150.0" styleClass="montserrat-black" text="0" textFill="#282828">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                              <VBox alignment="TOP_CENTER" layoutX="370.0" layoutY="10.0" prefHeight="125.0" prefWidth="130.0" spacing="10.0" style="-fx-background-color: #f2f2f2 #f2f2f2; -fx-background-radius: 0 10 10 0;">
+                                 <children>
+                                    <Label alignment="CENTER" prefHeight="50.0" prefWidth="150.0" text="solar panels" textFill="#282828">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                    <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@images/panel.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label fx:id="statsSolar" alignment="CENTER" prefHeight="38.0" prefWidth="150.0" styleClass="montserrat-black" text="0" textFill="#282828">
+                                       <font>
+                                          <Font size="15.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </HBox>
+                          </children>
+                      </AnchorPane>
+                  <AnchorPane fx:id="paneData" layoutX="10.0" layoutY="10.0" prefHeight="810.0" prefWidth="1010.0" style="-fx-background-color: white;" styleClass="wallpaper-light">
+                     <children>
+                        <Label alignment="TOP_LEFT" layoutX="55.0" layoutY="95.0" prefHeight="160.0" prefWidth="900.0" text="The environmental impacts of the different meals in terms of emissions (in kg CO2 eq.) and land use (in m2 per year) were calculated based on a report by the Dutch Ministry of Health, Welfare and Sport that was published in 2016 [1]. The report has the ecological impacts of different types of food per unit of weight (kg) based on consumption in The Netherlands. A meal was assumed to have 130g of protein, 140g of vegetables and 180g of carbohydrates. For carnivorous meals, the distribution of the different kinds of meat consumption per head in The Netherlands [2] was used to compute a representative number for ecological impacts of meat consumption. The protein source of vegetarian and vegan meals was assumed to be eggs and peas, respectively. Carbohydrates were presumed to be taken from potatoes. For fish and vegetables, the average ecological impacts within each respective category was taken. Water use was computed in a similar fashion, but the data was taken from Hoekstra &amp; Chapagain (2007) [3]." textFill="#282828" wrapText="true" />
+                        <Label alignment="TOP_LEFT" layoutX="55.0" layoutY="311.0" prefHeight="50.0" prefWidth="900.0" text="Travel data was taken from De Lijn, a Flemish transportation company run by the Belgian government [4]. For the emission values of flights, a report published by the University of Oxford was used [5]. From both sources, the emissions in kg CO2 eq. per km were taken." textFill="#282828" wrapText="true" />
+                        <Label alignment="TOP_LEFT" layoutX="56.0" layoutY="439.0" prefHeight="100.0" prefWidth="900.0" text="The expected amount of energy production (in kWh) of solar panels per year per m2 was taken as calculated by Nuon, a Dutch energy provider [6]. To calculate the emission savings, the emissions of energy production of conventional sources per kWh were used [7]. The savings are simply the emissions from conventional energy production for the expected amount of energy produced by the installed surface area of solar panels. For lowering the home temperature, calculations were based on those done by Sandra Temmel and Agata Gerroir [8]." textFill="#282828" wrapText="true" />
+                        <FontAwesomeIconView fill="#acce6c" glyphName="CUTLERY" layoutX="55.0" layoutY="80.0" size="30" />
+                        <FontAwesomeIconView fill="#e79398" glyphName="BICYCLE" layoutX="55.0" layoutY="301.0" size="30" />
+                        <FontAwesomeIconView fill="#f9dd76" glyphName="HOME" layoutX="54.0" layoutY="429.0" size="30" />
+                        <Label alignment="TOP_LEFT" layoutX="55.0" layoutY="650.0" prefHeight="147.0" prefWidth="900.0" text="[1] E., De Valk, A., Hollander, &amp; M., Zijp. (2016). Milieubelasting van de voedselconsumptie in Nederland (Rep. No. 2016-0074). Retrieved April 10, 2019, from Ministerie van Volksgezondheid, Welzijn en Sport website: https://www.rivm.nl/bibliotheek/rapporten/2016-0074.pdf [2] I., Terluin, D., Verhoog, H., Dagevos, P., Van Horne, &amp; R., Hoste. (2017). Vleesconsumptie per hoofd van de bevolking in Nederland, 2005-2016 (Rep. No. 2017-099). Retrieved April 10, 2019, from Wagen University website: http://edepot.wur.nl/424550 [3] Hoekstra, A. Y., &amp; Chapagain, A. K. (2006). Water footprints of nations: Water use by people as a function of their consumption pattern. Water Resources Management, 21(1), 35-48. doi:10.1007/s11269-006-9039-x [4] CO2-emissions of vehicles. (n.d.). Retrieved from https://www.delijn.be/en/overdelijn/organisatie/zorgzaam-ondernemen/milieu/co2-uitstoot-voertuigen.html [5] C., Jardine. (2009). Calculating The Carbon Dioxide Emissions Of Flights (Rep.). Retrieved April 10, 2019, from University of Oxford website: https://www.eci.ox.ac.uk/research/energy/downloads/jardine09-carboninflights.pdf [6] Nuon. (2018, May 28). Opbrengst zonnepanelen per m2. Retrieved April 10, 2019, from https://www.nuon.nl/kennis/opbrengst-zonnepanelen-per-m2/ [7] CO2 emissie factoren. (2017). Retrieved April 10, 2019, from https://www.co2emissiefactoren.nl/wp-content/uploads/2017/12/2017-12-Elektriciteit.pdf [8] Save energy while keeping an ideal room temperature. (2017, May 11). Retrieved from https://theecoguide.org/ideal-room-temperature" textFill="#777777" wrapText="true">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </AnchorPane>
+                      <AnchorPane fx:id="paneDashboard" prefHeight="800.0" prefWidth="1000.0" style="-fx-background-color: white;" styleClass="wallpaper-light" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <children>
+                        <JFXTabPane fx:id="tabPaneActivities" layoutX="60.0" layoutY="40.0" prefHeight="450.0" prefWidth="500.0" style="-fx-background-color: #f7f7f8;" styleClass="activity-pane" tabMaxHeight="75.0" tabMaxWidth="75.0" tabMinHeight="75.0" tabMinWidth="75.0">
+                           <tabs>
+                              <Tab fx:id="tabFood" closable="false">
+                                 <content>
+                                    <AnchorPane fx:id="paneFood" minHeight="0.0" minWidth="0.0" prefHeight="348.0" prefWidth="500.0" style="-fx-background-radius: 0 0 7 7;">
+                                       <children>
+                                          <HBox layoutX="21.0" layoutY="60.0" prefHeight="60.0" prefWidth="460.0" spacing="20.0">
+                                             <children>
+                                                <JFXToggleNode fx:id="f_veganA" contentDisplay="GRAPHIC_ONLY" prefHeight="60.0" prefWidth="100.0">
+                                                   <graphic>
+                                                      <VBox alignment="TOP_CENTER" prefHeight="60.0" prefWidth="100.0" spacing="5.0">
+                                                         <children>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@images/vegan.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="100.0" text="vegan">
+                                                               <font>
+                                                                  <Font size="10.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                   </graphic>
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="mealAfter" />
+                                                   </toggleGroup>
+                                                </JFXToggleNode>
+                                                <JFXToggleNode fx:id="f_vegetarianA" contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" prefHeight="60.0" prefWidth="100.0" selected="true" toggleGroup="$mealAfter">
+                                                   <graphic>
+                                                      <VBox alignment="TOP_CENTER" prefHeight="60.0" prefWidth="100.0" spacing="5.0">
+                                                         <children>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@images/vegetarian.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="100.0" text="vegetarian">
+                                                               <font>
+                                                                  <Font size="10.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                   </graphic>
+                                                </JFXToggleNode>
+                                                <JFXToggleNode fx:id="f_pescetarianA" contentDisplay="GRAPHIC_ONLY" layoutX="130.0" layoutY="10.0" prefHeight="60.0" prefWidth="100.0" toggleGroup="$mealAfter">
+                                                   <graphic>
+                                                      <VBox alignment="TOP_CENTER" prefHeight="60.0" prefWidth="100.0" spacing="5.0">
+                                                         <children>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@images/pescetarian.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="100.0" text="pescetarian">
+                                                               <font>
+                                                                  <Font size="10.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                   </graphic>
+                                                </JFXToggleNode>
+                                                <JFXToggleNode fx:id="f_meatA" contentDisplay="GRAPHIC_ONLY" layoutX="250.0" layoutY="10.0" prefHeight="60.0" prefWidth="100.0" toggleGroup="$mealAfter">
+                                                   <graphic>
+                                                      <VBox alignment="TOP_CENTER" prefHeight="60.0" prefWidth="100.0" spacing="5.0">
+                                                         <children>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@images/carnivorous.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="100.0" text="carnivorous">
+                                                               <font>
+                                                                  <Font size="10.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                   </graphic>
+                                                </JFXToggleNode>
+                                             </children>
+                                          </HBox>
+                                          <Label alignment="CENTER" layoutX="191.0" layoutY="165.0" text="instead of eating" textFill="#282828">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <Label layoutX="234.0" layoutY="20.0" text="I ate" textFill="#282828">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXButton fx:id="buttonAddMeal" layoutX="213.0" layoutY="335.0" onAction="#handleButtonAction" styleClass="button-green" text="add meal" />
+                                          <JFXCheckBox fx:id="checkLocal" checkedColor="#acce6c" layoutX="186.0" layoutY="300.0" text="locally produced" textFill="#282828" unCheckedColor="#777777" />
+                                          <HBox layoutX="21.0" layoutY="205.0" prefHeight="60.0" prefWidth="460.0" spacing="20.0">
+                                             <children>
+                                                <JFXToggleNode fx:id="f_vegan" contentDisplay="GRAPHIC_ONLY" prefHeight="60.0" prefWidth="100.0">
+                                                   <graphic>
+                                                      <VBox alignment="TOP_CENTER" prefHeight="60.0" prefWidth="100.0" spacing="5.0">
+                                                         <children>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@images/vegan.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="100.0" text="vegan">
+                                                               <font>
+                                                                  <Font size="10.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                   </graphic>
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="mealBefore" />
+                                                   </toggleGroup>
+                                                </JFXToggleNode>
+                                                <JFXToggleNode fx:id="f_vegetarian" contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" prefHeight="60.0" prefWidth="100.0" toggleGroup="$mealBefore">
+                                                   <graphic>
+                                                      <VBox alignment="TOP_CENTER" prefHeight="60.0" prefWidth="100.0" spacing="5.0">
+                                                         <children>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@images/vegetarian.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="100.0" text="vegetarian">
+                                                               <font>
+                                                                  <Font size="10.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                   </graphic>
+                                                </JFXToggleNode>
+                                                <JFXToggleNode fx:id="f_pescetarian" contentDisplay="GRAPHIC_ONLY" layoutX="130.0" layoutY="10.0" prefHeight="60.0" prefWidth="100.0" toggleGroup="$mealBefore">
+                                                   <graphic>
+                                                      <VBox alignment="TOP_CENTER" prefHeight="60.0" prefWidth="100.0" spacing="5.0">
+                                                         <children>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@images/pescetarian.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="100.0" text="pescetarian">
+                                                               <font>
+                                                                  <Font size="10.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                   </graphic>
+                                                </JFXToggleNode>
+                                                <JFXToggleNode fx:id="f_meat" contentDisplay="GRAPHIC_ONLY" layoutX="250.0" layoutY="10.0" prefHeight="60.0" prefWidth="100.0" selected="true" toggleGroup="$mealBefore">
+                                                   <graphic>
+                                                      <VBox alignment="TOP_CENTER" prefHeight="60.0" prefWidth="100.0" spacing="5.0">
+                                                         <children>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@images/carnivorous.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="100.0" text="carnivorous">
+                                                               <font>
+                                                                  <Font size="10.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                   </graphic>
+                                                </JFXToggleNode>
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                                 <graphic>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="CUTLERY" size="30" styleClass="tab-icon-green" />
+                                 </graphic>
+                              </Tab>
+                              <Tab fx:id="tabTravel" closable="false">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="BICYCLE" size="30" styleClass="tab-icon-green" />
+                                 </graphic>
+                                 <content>
+                                    <AnchorPane prefHeight="180.0" prefWidth="200.0" style="-fx-background-radius: 0 0 7 7;">
+                                       <children>
+                                          <HBox layoutX="121.0" layoutY="20.0" prefHeight="45.0" prefWidth="260.0" spacing="10.0">
+                                             <children>
+                                                <Label alignment="BOTTOM_LEFT" prefHeight="30.0" prefWidth="75.0" text="I traveled" textFill="#282828">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <JFXTextField fx:id="fieldDistance" alignment="BOTTOM_CENTER" focusColor="#acce6c" prefHeight="35.0" prefWidth="60.0" text="10" unFocusColor="#777777" />
+                                                <Label alignment="BOTTOM_LEFT" prefHeight="30.0" prefWidth="105.0" text="kilometres by" textFill="#282828">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <JFXButton fx:id="buttonAddTravel" layoutX="199.0" layoutY="320.0" onAction="#handleButtonAction" styleClass="button-green" text="add transport" textFill="#282828" />
+                                          <HBox layoutX="121.0" layoutY="250.0" prefHeight="30.0" prefWidth="260.0">
+                                             <children>
+                                                <Label prefHeight="30.0" prefWidth="100.0" text="instead of by" textFill="#282828">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <JFXComboBox fx:id="travelBefore" focusColor="#acce6c" prefHeight="30.0" prefWidth="160.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox layoutX="21.0" layoutY="156.0" prefHeight="60.0" prefWidth="460.0" spacing="20.0">
+                                             <children>
+                                                <JFXToggleNode fx:id="t_electric" contentDisplay="GRAPHIC_ONLY" prefHeight="60.0" prefWidth="100.0">
+                                                   <graphic>
+                                                      <VBox alignment="TOP_CENTER" prefHeight="60.0" prefWidth="100.0" spacing="5.0">
+                                                         <children>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@images/electric.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="100.0" text="electric car">
+                                                               <font>
+                                                                  <Font size="10.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                   </graphic>
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="travelAfter" />
+                                                   </toggleGroup>
+                                                </JFXToggleNode>
+                                                <JFXToggleNode fx:id="t_hybrid" contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" prefHeight="60.0" prefWidth="100.0" toggleGroup="$travelAfter">
+                                                   <graphic>
+                                                      <VBox alignment="TOP_CENTER" prefHeight="60.0" prefWidth="100.0" spacing="5.0">
+                                                         <children>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@images/hybrid.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="100.0" text="hybrid car">
+                                                               <font>
+                                                                  <Font size="10.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                   </graphic>
+                                                </JFXToggleNode>
+                                                <JFXToggleNode fx:id="t_car" contentDisplay="GRAPHIC_ONLY" layoutX="130.0" layoutY="10.0" prefHeight="60.0" prefWidth="100.0" toggleGroup="$travelAfter">
+                                                   <graphic>
+                                                      <VBox alignment="TOP_CENTER" prefHeight="60.0" prefWidth="100.0" spacing="5.0">
+                                                         <children>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@images/gas.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="100.0" text="gas car">
+                                                               <font>
+                                                                  <Font size="10.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                   </graphic>
+                                                </JFXToggleNode>
+                                                <JFXToggleNode fx:id="t_plane" contentDisplay="GRAPHIC_ONLY" layoutX="250.0" layoutY="10.0" prefHeight="60.0" prefWidth="100.0" toggleGroup="$travelAfter">
+                                                   <graphic>
+                                                      <VBox alignment="TOP_CENTER" prefHeight="60.0" prefWidth="100.0" spacing="5.0">
+                                                         <children>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@images/plane.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="100.0" text="plane">
+                                                               <font>
+                                                                  <Font size="10.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                   </graphic>
+                                                </JFXToggleNode>
+                                             </children>
+                                          </HBox>
+                                          <HBox layoutX="80.0" layoutY="80.0" prefHeight="60.0" prefWidth="340.0" spacing="20.0">
+                                             <children>
+                                                <JFXToggleNode fx:id="t_bike" contentDisplay="GRAPHIC_ONLY" prefHeight="60.0" prefWidth="100.0" selected="true" toggleGroup="$travelAfter">
+                                                   <graphic>
+                                                      <VBox alignment="TOP_CENTER" prefHeight="60.0" prefWidth="100.0" spacing="5.0">
+                                                         <children>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@images/bike.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="100.0" text="bike">
+                                                               <font>
+                                                                  <Font size="10.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                   </graphic>
+                                                </JFXToggleNode>
+                                                <JFXToggleNode fx:id="t_train" contentDisplay="GRAPHIC_ONLY" layoutX="10.0" layoutY="10.0" prefHeight="60.0" prefWidth="100.0" toggleGroup="$travelAfter">
+                                                   <graphic>
+                                                      <VBox alignment="TOP_CENTER" prefHeight="60.0" prefWidth="100.0" spacing="5.0">
+                                                         <children>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@images/train.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="100.0" text="train">
+                                                               <font>
+                                                                  <Font size="10.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                   </graphic>
+                                                </JFXToggleNode>
+                                                <JFXToggleNode fx:id="t_bus" contentDisplay="GRAPHIC_ONLY" layoutX="130.0" layoutY="10.0" prefHeight="60.0" prefWidth="100.0" toggleGroup="$travelAfter">
+                                                   <graphic>
+                                                      <VBox alignment="TOP_CENTER" prefHeight="60.0" prefWidth="100.0" spacing="5.0">
+                                                         <children>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@images/bus.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="100.0" text="bus">
+                                                               <font>
+                                                                  <Font size="10.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                   </graphic>
+                                                </JFXToggleNode>
+                                             </children>
+                                          </HBox>
+                                       </children></AnchorPane>
+                                 </content>
+                              </Tab>
+                              <Tab fx:id="tabSolar" closable="false">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="425.0" style="-fx-background-radius: 0 0 7 7;">
+                                       <children>
+                                          <JFXTextField fx:id="fieldSurface" alignment="CENTER" focusColor="#acce6c" layoutX="211.0" layoutY="130.0" prefHeight="30.0" prefWidth="80.0" text="10" unFocusColor="#777777" />
+                                          <Label alignment="BOTTOM_LEFT" layoutX="81.0" layoutY="90.0" prefHeight="30.0" prefWidth="340.0" text="surface area (in m2) of solar panels installed" textFill="#282828">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXButton fx:id="buttonAddPanel" contentDisplay="GRAPHIC_ONLY" layoutX="201.0" layoutY="220.0" onAction="#handleButtonAction" prefHeight="100.0" prefWidth="100.0" style="-fx-background-color: #18ace0; -fx-background-radius: 50;">
+                                             <graphic>
+                                                <ImageView fitHeight="67.0" fitWidth="70.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@images/panel.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </JFXButton>
+                                       </children></AnchorPane>
+                                 </content>
+                                 <graphic>
+                                    <WeatherIconView fill="WHITE" glyphName="YAHOO_32" size="30" styleClass="tab-icon-green" />
+                                 </graphic>
+                              </Tab>
+                              <Tab fx:id="tabTemperature" closable="false">
+                                 <content>
+                                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="425.0" style="-fx-background-radius: 0 0 7 7;">
+                                       <children>
+                                          <Label layoutX="166.0" layoutY="20.0" text="my home is powered by" textFill="#282828">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXSlider fx:id="sliderTemp" blockIncrement="0.5" indicatorPosition="RIGHT" layoutX="68.0" layoutY="195.0" majorTickUnit="1.0" max="10.0" minorTickCount="1" prefHeight="16.0" prefWidth="365.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" value="1.0" />
+                                          <Label layoutX="127.0" layoutY="160.0" text="I lowered the thermostat by (in °C)" textFill="#282828">
+                                             <font>
+                                                <Font size="15.0" />
+                                             </font>
+                                          </Label>
+                                          <JFXButton fx:id="buttonLowerTemp" layoutX="185.0" layoutY="334.0" onAction="#handleButtonAction" styleClass="button-green" text="lower temperature" />
+                                          <HBox layoutX="185.0" layoutY="270.0" prefHeight="45.0" prefWidth="130.0" spacing="5.0">
+                                             <children>
+                                                <Label alignment="BOTTOM_LEFT" prefHeight="30.0" prefWidth="25.0" text="for" textFill="#282828">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                                <JFXTextField fx:id="weeks" alignment="BOTTOM_CENTER" focusColor="#acce6c" prefHeight="35.0" prefWidth="43.0" text="8" unFocusColor="#777777" />
+                                                <Label alignment="BOTTOM_LEFT" prefHeight="30.0" prefWidth="55.0" text="weeks" textFill="#282828">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </HBox>
+                                          <HBox layoutX="140.0" layoutY="60.0" prefHeight="63.0" prefWidth="220.0" spacing="20.0">
+                                             <children>
+                                                <JFXToggleNode fx:id="h_gas" contentDisplay="GRAPHIC_ONLY" layoutX="130.0" layoutY="10.0" prefHeight="60.0" prefWidth="100.0" selected="true">
+                                                   <graphic>
+                                                      <VBox alignment="TOP_CENTER" prefHeight="60.0" prefWidth="100.0" spacing="5.0">
+                                                         <children>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@images/natural_gas.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="100.0" text="natural gas">
+                                                               <font>
+                                                                  <Font size="10.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                   </graphic>
+                                                   <toggleGroup>
+                                                      <ToggleGroup fx:id="homePower" />
+                                                   </toggleGroup>
+                                                </JFXToggleNode>
+                                                <JFXToggleNode fx:id="h_electricity" contentDisplay="GRAPHIC_ONLY" layoutX="250.0" layoutY="10.0" prefHeight="60.0" prefWidth="100.0" toggleGroup="$homePower">
+                                                   <graphic>
+                                                      <VBox alignment="TOP_CENTER" prefHeight="60.0" prefWidth="100.0" spacing="5.0">
+                                                         <children>
+                                                            <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                                               <image>
+                                                                  <Image url="@images/electricity.png" />
+                                                               </image>
+                                                            </ImageView>
+                                                            <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="20.0" prefWidth="100.0" text="electricity">
+                                                               <font>
+                                                                  <Font size="10.0" />
+                                                               </font>
+                                                            </Label>
+                                                         </children>
+                                                      </VBox>
+                                                   </graphic>
+                                                </JFXToggleNode>
+                                             </children>
+                                          </HBox>
+                                       </children></AnchorPane>
+                                 </content>
+                                 <graphic>
+                                    <WeatherIconView fill="WHITE" glyphName="THERMOMETER" size="30" styleClass="tab-icon-green" text="" />
+                                 </graphic>
+                              </Tab>
+                              <Tab fx:id="tabTravel1" closable="false">
+                                 <graphic>
+                                    <FontAwesomeIconView fill="WHITE" glyphName="TREE" size="30" styleClass="tab-icon-green" />
+                                 </graphic>
+                                 <content>
+                                    <AnchorPane prefHeight="180.0" prefWidth="200.0" style="-fx-background-radius: 0 0 7 7;">
+                                       <children>
+                                          <JFXButton fx:id="buttonPlantTree" contentDisplay="GRAPHIC_ONLY" layoutX="100.0" layoutY="38.0" onAction="#handleButtonAction" prefHeight="300.0" prefWidth="300.0" style="-fx-background-color: d0e6c9; -fx-background-radius: 200;">
+                                             <graphic>
+                                                <ImageView fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@images/plant_tree.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </JFXButton>
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </Tab>
+                           </tabs>
+                        </JFXTabPane>
+                        <StackPane layoutX="610.0" layoutY="400.0" prefHeight="360.0" prefWidth="355.0">
+                           <children>
+                              <AnchorPane fx:id="paneFriend" prefHeight="360.0" prefWidth="355.0" style="-fx-background-color: #f2f2f2; -fx-background-radius: 7 7 7 7;">
+                                 <children>
+                                    <HBox layoutX="35.0" layoutY="180.0" prefHeight="155.0" prefWidth="225.0" spacing="30.0">
+                                       <children>
+                                          <VBox prefHeight="155.0" prefWidth="75.0" spacing="10.0">
+                                             <children>
+                                                <Label alignment="CENTER" prefHeight="30.0" prefWidth="75.0" text="carbon saved" textFill="#777777">
+                                                   <font>
+                                                      <Font size="10.0" />
+                                                   </font>
+                                                </Label>
+                                                <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@images/co2_saved.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label fx:id="carbonSavedFriend" alignment="CENTER" prefHeight="30.0" prefWidth="75.0" styleClass="montserrat-black" text="0 kg" textFill="#777777">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="155.0" prefWidth="75.0" spacing="10.0">
+                                             <children>
+                                                <Label alignment="CENTER" prefHeight="30.0" prefWidth="75.0" text="water saved" textFill="#777777">
+                                                   <font>
+                                                      <Font size="10.0" />
+                                                   </font>
+                                                </Label>
+                                                <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@images/water_saved.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label fx:id="waterSavedFriend" alignment="CENTER" prefHeight="30.0" prefWidth="75.0" styleClass="montserrat-black" text="0 L" textFill="#777777">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                          <VBox prefHeight="155.0" prefWidth="75.0" spacing="10.0">
+                                             <children>
+                                                <Label alignment="CENTER" prefHeight="30.0" prefWidth="75.0" text="land saved" textFill="#777777">
+                                                   <font>
+                                                      <Font size="10.0" />
+                                                   </font>
+                                                </Label>
+                                                <ImageView fitHeight="75.0" fitWidth="75.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@images/land_saved.png" />
+                                                   </image>
+                                                </ImageView>
+                                                <Label fx:id="landSavedFriend" alignment="CENTER" prefHeight="30.0" prefWidth="75.0" styleClass="montserrat-black" text="0 m2" textFill="#777777">
+                                                   <font>
+                                                      <Font size="15.0" />
+                                                   </font>
+                                                </Label>
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                    </HBox>
+                                    <Circle fx:id="friendImage" fill="WHITE" layoutX="178.0" layoutY="75.0" radius="55.0" stroke="#acce6c" strokeType="INSIDE" strokeWidth="3.0" />
+                                    <Label fx:id="friendName" alignment="CENTER" layoutX="78.0" layoutY="135.0" prefHeight="20.0" prefWidth="200.0" styleClass="user" text="username" textFill="#282828" />
+                                    <JFXButton fx:id="buttonBack" layoutX="15.0" layoutY="15.0" onAction="#handleButtonAction" style="-fx-background-radius: 30;" styleClass="button-orange" text="back" />
+                                    <JFXButton fx:id="buttonMore" layoutX="311.0" layoutY="15.0" onAction="#handleButtonAction" styleClass="button-green" text="..." />
+                                 </children>
+                              </AnchorPane>
+                              <JFXTabPane fx:id="tabPaneFriends" prefHeight="360.0" prefWidth="355.0" style="-fx-background-color: #f7f7f8;" styleClass="activity-pane" tabMaxHeight="75.0" tabMaxWidth="75.0" tabMinHeight="75.0" tabMinWidth="75.0">
+                                 <tabs>
+                                    <Tab fx:id="tabFriends" closable="false">
+                                       <content>
+                                          <AnchorPane fx:id="paneFriends" minHeight="0.0" minWidth="0.0" prefHeight="150.0" prefWidth="355.0">
+                                             <children>
+                                                <JFXListView fx:id="friendList" prefHeight="235.0" prefWidth="355.0" style="-fx-background-color: #f7f7f8;" />
+                                                <HBox layoutX="88.0" layoutY="245.0" prefHeight="30.0" prefWidth="180.0" spacing="20.0">
+                                                   <children>
+                                                      <JFXButton fx:id="buttonCheckFriend" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="80.0" styleClass="button-orange" text="view" />
+                                                      <JFXButton fx:id="buttonRemoveFriend" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="80.0" styleClass="button-red" text="remove" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="GROUP" size="30" styleClass="tab-icon-orange" />
+                                       </graphic>
+                                    </Tab>
+                                    <Tab fx:id="tabRequests" closable="false">
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="USER_PLUS" size="30" styleClass="tab-icon-orange" />
+                                       </graphic>
+                                       <content>
+                                          <AnchorPane prefHeight="180.0" prefWidth="200.0">
+                                             <children>
+                                                <JFXListView fx:id="requestList" prefHeight="235.0" prefWidth="355.0" style="-fx-background-color: #f7f7f8;" />
+                                                <HBox layoutX="88.0" layoutY="245.0" prefHeight="30.0" prefWidth="180.0" spacing="20.0">
+                                                   <children>
+                                                      <JFXButton fx:id="buttonAccept" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 30;" styleClass="button-green" text="accept" />
+                                                      <JFXButton fx:id="buttonDecline" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="80.0" style="-fx-background-radius: 30;" styleClass="button-red" text="decline" />
+                                                   </children>
+                                                </HBox>
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                    </Tab>
+                                    <Tab fx:id="tabSearch" closable="false">
+                                       <content>
+                                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="425.0">
+                                             <children>
+                                                <HBox layoutX="63.0" layoutY="20.0" prefHeight="30.0" prefWidth="230.0" spacing="10.0">
+                                                   <children>
+                                                      <TextField fx:id="fieldSearch" prefHeight="30.0" prefWidth="150.0" promptText="username" style="-fx-background-color: #f2f2f2;" />
+                                                      <JFXButton fx:id="buttonSearch" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="70.0" style="-fx-background-radius: 30;" styleClass="button-orange" text="search" />
+                                                   </children>
+                                                </HBox>
+                                                <JFXListView fx:id="searchList" layoutY="65.0" prefHeight="170.0" prefWidth="355.0" style="-fx-background-color: #f7f7f8;" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="65.0" />
+                                                <JFXButton fx:id="buttonAddFriend" layoutX="163.0" layoutY="245.0" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="30.0" style="-fx-background-radius: 30;" styleClass="button-orange" text="+" />
+                                             </children>
+                                          </AnchorPane>
+                                       </content>
+                                       <graphic>
+                                          <FontAwesomeIconView fill="WHITE" glyphName="SEARCH" size="30" styleClass="tab-icon-orange" text="" />
+                                       </graphic>
+                                    </Tab>
+                                 </tabs>
+                              </JFXTabPane>
+                           </children>
+                        </StackPane>
+                        <AnchorPane layoutX="610.0" layoutY="40.0" prefHeight="330.0" prefWidth="355.0" style="-fx-background-color: #f7f7f8; -fx-background-radius: 0 0 7 7;">
+                           <children>
+                              <AnchorPane fx:id="paneHistory" prefHeight="40.0" prefWidth="355.0" style="-fx-background-color: #4c9ea4; -fx-background-radius: 7 7 0 0;">
+                                 <children>
+                                    <Label layoutX="135.0" layoutY="7.0" text="activities" textFill="#0d4f54">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </AnchorPane>
+                              <JFXListView fx:id="historyList" layoutY="40.0" prefHeight="240.0" prefWidth="355.0" style="-fx-background-color: #f7f7f8;" />
+                              <JFXButton fx:id="buttonRemove" layoutX="138.0" layoutY="286.0" onAction="#handleButtonAction" prefHeight="30.0" prefWidth="80.0" styleClass="button-red" text="remove" />
+                           </children>
+                        </AnchorPane>
+                          </children>
+                      </AnchorPane>
+                  </children>
+              </AnchorPane>
+         </center>
+      </BorderPane>
+      <StackPane fx:id="stackSnackbar" layoutY="810.0" prefHeight="10.0" prefWidth="1300.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="810.0" />
+   </children>
+</AnchorPane>
